@@ -1,0 +1,3 @@
+gcc time.c -o time -lX11 -lXext
+#gcc -c main.c -o main.o 
+#gcc *.o -o time
