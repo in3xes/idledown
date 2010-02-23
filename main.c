@@ -3,10 +3,11 @@
 #include "id.h"
 
 int main() {
-	unsigned long time = 0;
+	int time1 = 0;
 	while(1) {
-		time = idletime();
-		printf("Idle time is :%lu\t", time);
+		time1 = idletime();
+		printf("Idle time is :%i\n", time1);
+		sleep(1);
 	}
 
 	return 1;

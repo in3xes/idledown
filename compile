@@ -1,3 +1,3 @@
-gcc time.c -o time -lX11 -lXext
-#gcc -c main.c -o main.o 
-#gcc *.o -o time
+gcc -c time.c -o ./obj/time.o -lX11 -lXext -lXss
+gcc -c main.c -o ./obj/main.o 
+gcc ./obj/* -o time -lX11 -lXext -lXss

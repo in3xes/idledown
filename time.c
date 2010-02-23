@@ -1,20 +1,27 @@
+/*
 #include <X11/Xlib.h>
 #include <X11/extensions/dpms.h>
 #include <X11/extensions/scrnsaver.h>
 #include <stdio.h>
+*/
+#include "id.h"
 
-unsigned long workaroundCreepyXServer(Display *dpy, unsigned long _idleTime );
-void idletime();
+//unsigned long workaroundCreepyXServer(Display *dpy, unsigned long _idleTime );
+//int idletime();
 
+/*
 int main()
 {
-//	while(1) {
+	while(1) {
 		idletime();
-//	}
+	}
 
 	return 1;
 }
-void idletime()
+*/
+
+
+int idletime()
 {
   XScreenSaverInfo ssi;
   Display *dpy;
@@ -33,8 +40,11 @@ void idletime()
     fprintf(stderr, "couldn't query screen saver info\n");
   }
   
-  printf("%lu\n", workaroundCreepyXServer(dpy, ssi.idle));
+  int time = 0;
+  time = (int ) workaroundCreepyXServer(dpy, ssi.idle);
   XCloseDisplay(dpy);
+
+	return time;
 }
 
 unsigned long workaroundCreepyXServer(Display *dpy, unsigned long _idleTime ){
